@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+<script id="codepen-helper" src="https://public.codepenassets.com/preview/index.3d9807ba2f99c7cd6285a0bb14172f.js"></script>
+    <meta charset="UTF-8">
+    <title>HSC EXAM 2026 ROUTINE</title>
+    <link rel="stylesheet" href="/style.cd372fb85148700fa880.css">
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSC 2026 Premium Vintage Routine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Amiri:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --parchment: #FDF7E7;
+            --parchment-dark: #F0E6D2;
+            --ink-dark: #2C1810;
+            --ink-light: #5C3A21;
+            --crimson: #8B0000;
+            --gold: #B8860B;
+        }
+
+        body {
+            font-family: 'Noto Serif Bengali', serif;
+            background-color: #E8DECC;
+            /* Premium Paper Texture */
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0.05) 100%),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+            color: var(--ink-dark);
+        }
+
+        /* Number Font for premium look */
+        .num-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .arabic-font {
+            font-family: 'Amiri', serif;
+        }
+
+        /* Royal Border Container */
+        .royal-container {
+            background-color: var(--parchment);
+            border: 2px solid var(--gold);
+            outline: 6px solid var(--ink-dark);
+            outline-offset: -12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2), inset 0 0 40px rgba(184, 134, 11, 0.1);
+            position: relative;
+        }
+
+        /* Decorative Corners */
+        .corner-ornament {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 3px solid var(--gold);
+        }
+        .top-left { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+        .top-right { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+        .bottom-left { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+        .bottom-right { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+        /* Classic Separator */
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--gold);
+            margin: 20px 0;
+        }
+        .separator::before, .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--gold);
+        }
+        .separator:not(:empty)::before { margin-right: .5em; }
+        .separator:not(:empty)::after { margin-left: .5em; }
+
+        /* Calendar Tear-off Style */
+        .calendar-page {
+            background: #fff;
+            border: 1px solid #d4c3a3;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .calendar-page::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 12px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 8px, #333 8px, #333 12px);
+            opacity: 0.1;
+        }
+        .cal-month { background: var(--crimson); color: white; }
+        
+        /* Stamped text */
+        .stamp {
+            border: 2px solid var(--crimson);
+            color: var(--crimson);
+            padding: 2px 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transform: rotate(-3deg);
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        /* Ledger row hover effect */
+        .ledger-row {
+            border-bottom: 1px dashed rgba(184, 134, 11, 0.4);
+            transition: all 0.3s ease;
+        }
+        .ledger-row:hover {
+            background-color: var(--parchment-dark);
+            transform: translateX(5px);
+        }
+
+        /* Active / Highlighted Row Perfected */
+        .highlighted-row {
+            background-color: rgba(184, 134, 11, 0.12); /* Perfect light gold highlight */
+            border-left: 6px solid var(--crimson); /* Crimson left border to pop */
+            box-shadow: inset 0 0 15px rgba(184, 134, 11, 0.08), 0 4px 8px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            transform: scale(1.01);
+            border-bottom: none; /* Remove dashed border for active item */
+        }
+        .highlighted-row:hover {
+            transform: scale(1.01) translateX(5px);
+            background-color: rgba(184, 134, 11, 0.18);
+        }
+
+        /* Gold Gradient Text */
+        .text-gold-gradient {
+            background: linear-gradient(to right, #8a6311, #B8860B, #8a6311);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .premium-box {
+            background: linear-gradient(135deg, var(--parchment), var(--parchment-dark));
+            border: 1px solid var(--gold);
+            box-shadow: inset 0 0 10px rgba(184, 134, 11, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-2 md:p-8 flex items-center justify-center">
+
+    <div class="royal-container max-w-5xl w-full mx-auto p-6 md:p-12">
+        
+        <!-- Ornaments -->
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        <div class="corner-ornament bottom-left"></div>
+        <div class="corner-ornament bottom-right"></div>
+
+        <!-- Bismillah Header -->
+        <header class="text-center mb-8 pt-4">
+            <h3 class="arabic-font text-2xl md:text-3xl text-[--crimson] mb-1">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h3>
+            <p class="text-[--ink-light] font-semibold tracking-wider text-sm md:text-base">বিসমিল্লাহির রাহমানির রাহিম</p>
+            
+            <div class="separator text-2xl">❧</div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[--ink-dark] mb-3 drop-shadow-sm">
+                উচ্চ মাধ্যমিক পরীক্ষা <span class="num-font text-[--crimson]">২০২৬</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-bold text-gold-gradient">বিজ্ঞান বিভাগ</h2>
+            <p class="italic text-[--ink-light] mt-2 font-medium">চূড়ান্ত সময়সূচী ও ক্ষণগণনা (রুটিন)</p>
+        </header>
+
+        <!-- Hero Section (Next Exam) -->
+        <div id="hero-section" class="premium-box rounded-lg p-6 md:p-8 mb-12 hidden relative overflow-hidden">
+            <!-- Decorative watermark -->
+            <i class="fas fa-university absolute -right-10 -bottom-10 text-[200px] text-[--gold] opacity-5"></i>
+            
+            <div class="text-center mb-6">
+                <span class="bg-[--ink-dark] text-[--parchment] px-4 py-1 rounded-full text-sm tracking-widest font-bold">পরবর্তী পরীক্ষা</span>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                
+                <!-- Large Calendar Style Date -->
+                <div class="calendar-page w-32 flex-shrink-0 text-center shadow-lg transform -rotate-2">
+                    <div id="hero-month" class="cal-month py-2 text-sm font-bold tracking-widest uppercase">মাস</div>
+                    <div id="hero-date-num" class="text-6xl num-font py-3 text-[--ink-dark] font-bold bg-[#fffdf9]">00</div>
+                    <div id="hero-day" class="bg-[--parchment-dark] text-[--ink-dark] text-sm py-2 font-bold border-t border-[#d4c3a3]">বার</div>
+                </div>
+
+                <!-- Subject Info -->
+                <div class="flex-1 text-center md:text-left">
+                    <div class="stamp mb-4" id="hero-code">বিষয় কোড: 000</div>
+                    <h2 id="hero-subject" class="text-3xl md:text-4xl font-extrabold text-[--ink-dark] mb-3 leading-tight">বিষয়ের নাম</h2>
+                    <p class="text-[--ink-light] font-semibold text-lg flex items-center justify-center md:justify-start gap-2 mb-2">
+                        <i class="far fa-clock text-[--gold]"></i> সকাল ১০:০০ ঘটিকা
+                    </p>
+                    <p class="text-sm text-[--crimson] font-bold bg-red-50/50 inline-block px-3 py-1 rounded border border-red-100">
+                        <i class="fas fa-bed mr-1"></i> <span id="hero-gap">বন্ধের দিন</span>
+                    </p>
+                </div>
+
+                <!-- Premium Hero Countdown -->
+                <div class="flex gap-3 text-center flex-shrink-0 bg-white/50 p-4 rounded-xl border border-[--gold] shadow-inner">
+                    <div>
+                        <div id="hero-days" class="text-4xl md:text-5xl num-font font-bold text-[--crimson]">00</div>
+                        <div class="text-[11px] uppercase font-bold text-[--ink-light] mt-1 tracking-wider">দিন</div>
+                    </div>
+                    <div class="text-3xl num-font text-[--ink-light] mt-1">:</div>
+                    <div>
+                        <div id="hero-hours" class="text-4xl md:text-5xl num-font font-bold text-[--ink-dark]">00</div>
+                        <div class="text-[11px] uppercase font-bold text-[--ink-light] mt-1 tracking-wider">ঘণ্টা</div>
+                    </div>
+                    <div class="text-3xl num-font text-[--ink-light] mt-1">:</div>
+                    <div>
+                        <div id="hero-mins" class="text-4xl md:text-5xl num-font font-bold text-[--ink-dark]">00</div>
+                        <div class="text-[11px] uppercase font-bold text-[--ink-light] mt-1 tracking-wider">মিনিট</div>
+                    </div>
+                    <div class="text-3xl num-font text-[--ink-light] mt-1">:</div>
+                    <div>
+                        <div id="hero-secs" class="text-4xl md:text-5xl num-font font-bold text-[--gold]">00</div>
+                        <div class="text-[11px] uppercase font-bold text-[--ink-light] mt-1 tracking-wider">সেকেন্ড</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Routine List -->
+        <div class="relative z-10">
+            <h3 class="font-bold text-2xl text-[--ink-dark] mb-2 flex items-center">
+                <i class="fas fa-scroll mr-3 text-[--gold]"></i> সম্পূর্ণ সময়সূচী
+            </h3>
+            <div class="w-full h-[2px] bg-gradient-to-r from-[--gold] via-[--ink-dark] to-transparent mb-6"></div>
+            
+            <div id="routine-list" class="flex flex-col gap-3">
+                <!-- Rows injected via JS -->
+            </div>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="mt-16 pt-6 text-center relative z-10">
+            <div class="separator text-xl text-[--gold]">❦</div>
+            <p class="text-2xl font-bold mt-4 mb-2 tracking-widest" style="font-family: 'Playfair Display', serif; color: var(--ink-dark);">
+                &copy; Rahat
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Routine Data
+        const exams = [
+            { id: 1, subject: "বাংলা (আবশ্যিক) ১ম পত্র", date: "2026-07-02T10:00:00", code: "১০১" },
+            { id: 2, subject: "বাংলা (আবশ্যিক) ২য় পত্র", date: "2026-07-04T10:00:00", code: "১০২" },
+            { id: 3, subject: "ইংরেজি (আবশ্যিক) ১ম পত্র", date: "2026-07-06T10:00:00", code: "১০৭" },
+            { id: 4, subject: "ইংরেজি (আবশ্যিক) ২য় পত্র", date: "2026-07-08T10:00:00", code: "১০৮" },
+            { id: 5, subject: "তথ্য ও যোগাযোগ প্রযুক্তি", date: "2026-07-11T10:00:00", code: "২৭৫" },
+            { id: 6, subject: "পদার্থবিজ্ঞান ১ম পত্র", date: "2026-07-13T10:00:00", code: "১৭৪" },
+            { id: 7, subject: "পদার্থবিজ্ঞান ২য় পত্র", date: "2026-07-15T10:00:00", code: "১৭৫" },
+            { id: 8, subject: "রসায়ন ১ম পত্র", date: "2026-07-19T10:00:00", code: "১৭৬" },
+            { id: 9, subject: "রসায়ন ২য় পত্র", date: "2026-07-22T10:00:00", code: "১৭৭" },
+            { id: 10, subject: "জীববিজ্ঞান ১ম পত্র", date: "2026-07-27T10:00:00", code: "১৭৮" },
+            { id: 11, subject: "জীববিজ্ঞান ২য় পত্র", date: "2026-07-29T10:00:00", code: "১৭৯" },
+            { id: 12, subject: "উচ্চতর গণিত ১ম পত্র", date: "2026-08-02T10:00:00", code: "২৬৫" },
+            { id: 13, subject: "উচ্চতর গণিত ২য় পত্র", date: "2026-08-04T10:00:00", code: "২৬৬" }
+        ];
+
+        // English to Bengali Number formatting
+        const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        const enToBnNum = (num) => String(num).split('').map(d => bnDigits[d] || d).join('');
+
+        // Helper for gap text
+        const getGapText = (idx) => {
+            if (idx === 0) return "পরীক্ষার শুভ সূচনা";
+            const current = new Date(exams[idx].date);
+            const prev = new Date(exams[idx - 1].date);
+            const diffDays = Math.floor((current - prev) / (1000 * 60 * 60 * 24)) - 1;
+            return diffDays > 0 ? `পূর্বের পরীক্ষা হতে ${enToBnNum(diffDays)} দিন ছুটি` : "কোনো ছুটি নেই";
+        };
+
+        const routineList = document.getElementById('routine-list');
+
+        // Create the list rows
+        exams.forEach((exam, index) => {
+            const dateObj = new Date(exam.date);
+            const dayName = dateObj.toLocaleDateString('bn-BD', { weekday: 'long' });
+            const monthName = dateObj.toLocaleDateString('bn-BD', { month: 'short' });
+            const gapText = getGapText(index);
+            const serialNum = enToBnNum(index + 1); // Serial Number Generate
+
+            const row = document.createElement('div');
+            row.id = `row-${exam.id}`;
+            row.className = "ledger-row flex flex-col md:flex-row items-start md:items-center justify-between py-4 px-3 gap-4";
+
+            row.innerHTML = `
+                <div class="flex items-center gap-3 md:gap-5 w-full md:w-auto">
+                    
+                    <!-- Serial Number -->
+                    <div class="text-2xl md:text-3xl font-bold text-[--gold] opacity-60 w-8 md:w-10 text-center flex-shrink-0" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
+                        ${serialNum}.
+                    </div>
+
+                    <!-- Mini Calendar -->
+                    <div class="calendar-page w-[70px] text-center flex-shrink-0">
+                        <div class="cal-month text-[10px] font-bold uppercase tracking-widest">${monthName}</div>
+                        <div class="text-xl font-bold num-font py-1 text-[--ink-dark]">${dateObj.getDate()}</div>
+                        <div class="bg-[--parchment-dark] text-[10px] font-bold py-1 border-t border-gray-200">${dayName}</div>
+                    </div>
+                    
+                    <!-- Subject Info -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-xs font-bold text-[--gold] border border-[--gold] px-1.5 py-0.5 rounded uppercase">কোড: ${exam.code}</span>
+                            <span class="text-xs text-[--crimson] font-medium"><i class="fas fa-info-circle mr-1"></i>${gapText}</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-[--ink-dark]">${exam.subject}</h4>
+                    </div>
+                </div>
+
+                <!-- Mini Timer -->
+                <div class="w-full md:w-auto premium-box px-4 py-2 rounded flex gap-4 justify-center items-center shadow-sm ml-0 md:ml-auto" id="timer-row-${exam.id}">
+                    <!-- Timer populated by JS -->
+                </div>
+            `;
+            routineList.appendChild(row);
+        });
+
+        // Update Timers Logic
+        function updateTimers() {
+            const now = new Date().getTime();
+            let heroExam = null;
+
+            exams.forEach((exam, index) => {
+                const targetTime = new Date(exam.date).getTime();
+                const distance = targetTime - now;
+                const timerElement = document.getElementById(`timer-row-${exam.id}`);
+                const rowElement = document.getElementById(`row-${exam.id}`);
+
+                if (distance < 0) {
+                    // Completed Exam
+                    timerElement.innerHTML = `<div class="stamp">সম্পন্ন হয়েছে</div>`;
+                    rowElement.style.opacity = "0.5";
+                    rowElement.style.filter = "grayscale(50%)";
+                    rowElement.classList.remove('highlighted-row');
+                } else {
+                    // Upcoming Exam
+                    if (!heroExam) {
+                        heroExam = { ...exam, index, distance }; 
+                        // Adding the perfected highlight class
+                        rowElement.classList.add('highlighted-row');
+                    } else {
+                        // Removing highlight for other future exams
+                        rowElement.classList.remove('highlighted-row');
+                    }
+
+                    // Calculate remaining time
+                    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    timerElement.innerHTML = `
+                        <div class="text-center"><span class="num-font text-xl font-bold text-[--crimson]">${String(d).padStart(2,'0')}</span><div class="text-[9px] uppercase font-bold text-[--ink-light]">দিন</div></div>
+                        <div class="text-center"><span class="num-font text-xl font-bold text-[--ink-dark]">${String(h).padStart(2,'0')}</span><div class="text-[9px] uppercase font-bold text-[--ink-light]">ঘণ্টা</div></div>
+                        <div class="text-center"><span class="num-font text-xl font-bold text-[--ink-dark]">${String(m).padStart(2,'0')}</span><div class="text-[9px] uppercase font-bold text-[--ink-light]">মিনিট</div></div>
+                        <div class="text-center w-[30px]"><span class="num-font text-xl font-bold text-[--gold]">${String(s).padStart(2,'0')}</span><div class="text-[9px] uppercase font-bold text-[--ink-light]">সেকেন্ড</div></div>
+                    `;
+                }
+            });
+
+            // Update Hero Section
+            const heroSection = document.getElementById('hero-section');
+            if (heroExam) {
+                heroSection.classList.remove('hidden');
+                heroSection.classList.add('block');
+                
+                const heroDateObj = new Date(heroExam.date);
+                
+                // Calendar Block
+                document.getElementById('hero-month').innerText = heroDateObj.toLocaleDateString('bn-BD', { month: 'long' });
+                document.getElementById('hero-date-num').innerText = heroDateObj.getDate(); 
+                document.getElementById('hero-day').innerText = heroDateObj.toLocaleDateString('bn-BD', { weekday: 'long' });
+                
+                // Info Block
+                document.getElementById('hero-code').innerText = `বিষয় কোড: ${enToBnNum(heroExam.code)}`;
+                document.getElementById('hero-subject').innerText = heroExam.subject;
+                document.getElementById('hero-gap').innerText = getGapText(heroExam.index);
+
+                // Big Countdown
+                const d = Math.floor(heroExam.distance / (1000 * 60 * 60 * 24));
+                const h = Math.floor((heroExam.distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((heroExam.distance % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((heroExam.distance % (1000 * 60)) / 1000);
+
+                document.getElementById('hero-days').innerText = String(d).padStart(2, '0');
+                document.getElementById('hero-hours').innerText = String(h).padStart(2, '0');
+                document.getElementById('hero-mins').innerText = String(m).padStart(2, '0');
+                document.getElementById('hero-secs').innerText = String(s).padStart(2, '0');
+            } else {
+                heroSection.classList.add('hidden');
+            }
+        }
+
+        // Start Counter
+        setInterval(updateTimers, 1000);
+        updateTimers();
+
+    </script>
+</body>
+</html>
+    <script src="/script.cd372fb85148700fa880.js"></script>
+  </body>
+
+</html>
